@@ -30,13 +30,7 @@ export class SignupPageComponent implements OnInit {
   ngOnInit(): void {
   }
   getErrorMessage() {
-    if (this.details.get('password').hasError('required')) {
-      return 'You must enter a your password'
-    }
-    if (this.details.get('name').hasError('required')) {
-      return 'You must enter your name'
-    }
-    return this.details.get('email').hasError('required') ? 'Not a valid email' : '';
+      return 'You must enter a valid value'
   }
   signUp() {
     const payload = {
