@@ -20,4 +20,4 @@ import { MatInputModule } from '@angular/material/input';
   exports: [LoginPageComponent],
   // providers: [AuthorizationService]
 })
-export class LoginPageModule {}
+export class LoginPageModule { }

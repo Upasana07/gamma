@@ -1,8 +1,8 @@
-<img src="../../../../assets/images/group-30@3x.png" class="w-100 header-bg">
+<img src="../../../../assets/images/group-30@3x.png" class="w-100 header-bg" />
 <div class="page-background landing-page mt-5">
   <div class="d-flex justify-content-between px-4 m-2 pb-1 pt-4">
     <p class="header-heading">WORK EXPERIENCE</p>
-    <p class="person-name">{{userName|titlecase}}</p>
+    <p class="person-name">{{ userName | titlecase }}</p>
   </div>
   <div class="d-flex table-headings mx-4 container-fluid">
     <div class="col-sm-1 col-md-2 col-lg-2 px-1">Company</div>
@@ -12,55 +12,71 @@
     <div class="col-sm-1 col-md-3 col-lg-3 px-1">Description</div>
   </div>
   <div class="d-flex table-details mx-4 container-fluid" *ngFor="let details of userDetails">
-    <div class="col-sm-1 col-md-2 col-lg-2 ">{{details.company_name}}</div>
-    <div class="col-sm-1 col-md-2 col-lg-2 ">{{details.title}}</div>
-    <div class="col-sm-1 col-md-2 col-lg-2 ">{{details.location}}</div>
-    <div class="col-sm-1 col-md-3 col-lg-3 ">{{details.start_date}}</div>
-    <div class="col-sm-1 col-md-3 col-lg-3 ">{{details.description}}</div>
+    <div class="col-sm-1 col-md-2 col-lg-2">{{ details.company_name }}</div>
+    <div class="col-sm-1 col-md-2 col-lg-2">{{ details.title }}</div>
+    <div class="col-sm-1 col-md-2 col-lg-2">{{ details.location }}</div>
+    <div class="col-sm-1 col-md-3 col-lg-3">{{ details.start_date }}</div>
+    <div class="col-sm-1 col-md-3 col-lg-3">{{ details.description }}</div>
   </div>
-  <div *ngIf="userDetails && userDetails.length<1" class="text-center m-4">
+  <div *ngIf="userDetails && userDetails.length < 1" class="text-center m-4">
     <p>You don't have any past jobs, Let's add.</p>
   </div>
   <div class="d-flex justify-content-between">
-    <button class="primary-btn m-4" (click)="createNewExperience(createNewExperienceTemplate)">+ ADD</button>
+    <button class="primary-btn m-4" (click)="createNewExperience(createNewExperienceTemplate)">
+      + ADD
+    </button>
     <button class="primary-btn m-4" (click)="logOut()">Sign Out</button>
   </div>
 </div>
 <ng-template #createNewExperienceTemplate>
-  <div [formGroup]=newExperienceDetails class="d-grid text-center">
+  <div [formGroup]="newExperienceDetails" class="d-grid text-center">
     <mat-form-field appearance="fill">
       <mat-label>Company Name</mat-label>
       <input matInput formControlName="companyName" required />
-      <mat-error *ngIf="newExperienceDetails.get('companyName').invalid">{{getErrorMessage()}}</mat-error>
+      <mat-error *ngIf="newExperienceDetails.get('companyName').invalid">{{
+        getErrorMessage()
+      }}</mat-error>
     </mat-form-field>
     <mat-form-field appearance="fill">
       <mat-label>Title</mat-label>
       <input matInput formControlName="title" required />
-      <mat-error *ngIf="newExperienceDetails.get('title').invalid">{{getErrorMessage()}}</mat-error>
+      <mat-error *ngIf="newExperienceDetails.get('title').invalid">{{
+        getErrorMessage()
+      }}</mat-error>
     </mat-form-field>
     <mat-form-field appearance="fill">
       <mat-label>Start Date</mat-label>
       <input matInput formControlName="startDate" required />
-      <mat-error *ngIf="newExperienceDetails.get('startDate').invalid">{{getErrorMessage()}}</mat-error>
+      <mat-error *ngIf="newExperienceDetails.get('startDate').invalid">{{
+        getErrorMessage()
+      }}</mat-error>
     </mat-form-field>
     <mat-form-field appearance="fill">
       <mat-label>Location</mat-label>
       <input matInput formControlName="location" required />
-      <mat-error *ngIf="newExperienceDetails.get('location').invalid">{{getErrorMessage()}}</mat-error>
+      <mat-error *ngIf="newExperienceDetails.get('location').invalid">{{
+        getErrorMessage()
+      }}</mat-error>
     </mat-form-field>
     <mat-form-field appearance="fill">
       <mat-label>Description</mat-label>
       <input matInput formControlName="description" required />
-      <mat-error *ngIf="newExperienceDetails.get('description').invalid">{{getErrorMessage()}}</mat-error>
+      <mat-error *ngIf="newExperienceDetails.get('description').invalid">{{
+        getErrorMessage()
+      }}</mat-error>
     </mat-form-field>
     <mat-form-field appearance="fill">
       <mat-label>Email Id</mat-label>
       <input matInput formControlName="emailId" required />
-      <mat-error *ngIf="newExperienceDetails.get('emailId').invalid">{{getErrorMessage()}}</mat-error>
+      <mat-error *ngIf="newExperienceDetails.get('emailId').invalid">{{
+        getErrorMessage()
+      }}</mat-error>
     </mat-form-field>
   </div>
   <div class="d-flex justify-content-between">
-    <button class="primary-btn m-4" (click)="addNewExperience(newExperienceDetails)">ADD</button>
+    <button class="primary-btn m-4" (click)="addNewExperience(newExperienceDetails)">
+      ADD
+    </button>
     <button class="primary-btn m-4" (click)="goBack()">Cancel</button>
   </div>
 </ng-template>

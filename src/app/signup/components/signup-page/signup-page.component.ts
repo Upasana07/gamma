@@ -18,7 +18,7 @@ export class SignupPageComponent implements OnInit {
   userId: string;
   userName: string;
   hide = true;
-  constructor(private router: Router, 
+  constructor(private router: Router,
     private authService: AuthorizationService,
     private snackBar: MatSnackBar) {
     this.authService.user.subscribe((res) => {
@@ -33,7 +33,7 @@ export class SignupPageComponent implements OnInit {
     if (this.details.get('password').hasError('required')) {
       return 'You must enter a your password'
     }
-    if(this.details.get('name').hasError('required')) {
+    if (this.details.get('name').hasError('required')) {
       return 'You must enter your name'
     }
     return this.details.get('email').hasError('required') ? 'Not a valid email' : '';
@@ -52,7 +52,7 @@ export class SignupPageComponent implements OnInit {
           duration: 3000,
         });
       }
-    },(error)=>{
+    }, (error) => {
       this.snackBar.open('Please enter all the details', '', {
         duration: 3000,
       });
