@@ -1,0 +1,44 @@
+.header-bg {
+  height: 80px;
+  padding: 15px 625.8px 15px 625px;
+  background-image: linear-gradient(to right, #1e3e73, #27aae2);
+  object-fit: contain;
+}
+.header-heading {
+  font-size: 20px;
+  font-weight: 500;
+  color: #293031;
+}
+.person-name {
+  font-size: 18px;
+  text-align: right;
+  color: #286aa6;
+}
+.table-headings {
+  padding: 21px 20px 20px;
+  border: solid 1px #e6e6e6;
+  background-color: #fafafa;
+  width: 95%;
+}
+.table-details {
+  padding: 21px 20px 20px;
+  border: solid 1px #e6e6e6;
+  background-color: #ffffff;
+  border-top: none;
+  width: 95%;
+}
+@media screen and (max-width: 375px) and (min-width: 321px) {
+  .landing-page {
+    top: 13%;
+    left: 8%;
+    transform: translate(0%, 0%);
+  }
+  .header-bg {
+    padding: 20px;
+  }
+  .table-headings, .table-details {
+    padding: 10px;
+    font-size: 0.6rem;
+    width: 85%;
+  }
+}
