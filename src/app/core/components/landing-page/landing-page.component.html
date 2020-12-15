@@ -74,7 +74,7 @@
     </mat-form-field>
   </div>
   <div class="d-flex justify-content-between">
-    <button class="primary-btn m-4" (click)="addNewExperience(newExperienceDetails)">
+    <button class="primary-btn m-4" [disabled]="!newExperienceDetails.valid" (click)="addNewExperience(newExperienceDetails)">
       ADD
     </button>
     <button class="primary-btn m-4" (click)="goBack()">Cancel</button>

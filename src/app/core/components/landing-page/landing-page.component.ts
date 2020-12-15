@@ -53,13 +53,15 @@ export class LandingPageComponent implements OnInit {
       "description": userData.value.description,
       "email_id": userData.value.emailId
     }
-    this.authService.addUserExperience(data).subscribe((res) => {
-      this.getUserExperiences();
-      this.snackBar.open('Your entry has been added', '', {
-        duration: 3000,
-      });
-      this.dialog.closeAll();
-    });
+    if(data) {
+      this.authService.addUserExperience(data).subscribe((res) => {
+        this.getUserExperiences();
+        this.snackBar.open('Your entry has been added', '', {
+          duration: 3000,
+        });
+        this.dialog.closeAll();
+      }); 
+    }
   }
   getUserExperiences() {
     this.authService.getUserDetails(this.userId).subscribe(res => {

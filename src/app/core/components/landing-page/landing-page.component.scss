@@ -1,3 +1,6 @@
+.landing-page{
+  overflow: scroll;
+}
 .header-bg {
   height: 80px;
   padding: 15px 625.8px 15px 625px;
@@ -21,6 +24,7 @@
   width: 95%;
 }
 .table-details {
+  word-break: break-all;
   padding: 21px 20px 20px;
   border: solid 1px #e6e6e6;
   background-color: #ffffff;
@@ -29,6 +33,7 @@
 }
 @media screen and (max-width: 375px) and (min-width: 321px) {
   .landing-page {
+    word-break: break-all;
     top: 13%;
     left: 8%;
     transform: translate(0%, 0%);
